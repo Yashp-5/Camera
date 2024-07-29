@@ -1,19 +1,34 @@
-package com.coding.earthBolt_name
+package com.coding.camerausingcamerax
 
 
 import android.content.ContentValues
 import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.graphics.RectF
-import android.os.*
+import android.os.Build
+import android.os.Bundle
+import android.os.Environment
+import android.os.Handler
+import android.os.Looper
+import android.os.SystemClock
 import android.provider.MediaStore
 import android.util.Log
-import android.view.*
+import android.view.MotionEvent
+import android.view.OrientationEventListener
+import android.view.ScaleGestureDetector
+import android.view.Surface
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
+import androidx.camera.core.AspectRatio
+import androidx.camera.core.Camera
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.FocusMeteringAction
+import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCapture.OutputFileOptions
-import androidx.camera.core.resolutionselector.*
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.Preview
+import androidx.camera.core.resolutionselector.AspectRatioStrategy
+import androidx.camera.core.resolutionselector.ResolutionSelector
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.video.FallbackStrategy
 import androidx.camera.video.MediaStoreOutputOptions
@@ -26,11 +41,12 @@ import androidx.camera.video.VideoRecordEvent
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.coding.earthBolt_name.databinding.ActivityMainBinding
+import com.coding.camerausingcamerax.databinding.ActivityMainBinding
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+
 
 class MainActivity : AppCompatActivity() {
 

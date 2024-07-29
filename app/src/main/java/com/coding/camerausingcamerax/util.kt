@@ -1,4 +1,4 @@
-package com.coding.earthBolt_name
+package com.coding.camerausingcamerax
 
 import android.content.Context
 import android.content.DialogInterface
